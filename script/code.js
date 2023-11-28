@@ -1,23 +1,19 @@
-let mins = document.querySelector(#inputMins);
+//const convert = document.querySelector("#inputMins')
+//User Inputs
 
-
-//function conversion to seconds
-function convertToSeconds(minutes){
-    let seconds = minutes*60
-    return seconds
-}
-
-//console.log(convertToSeconds(5));
-
-//console conversion to minutes
-function convertToMins(seconds){
-    let minutes = seconds/60
-    return minutes
-}
-
-//console.log(convertToMins())
 
 //Button Converter Functionality
-let btn = document.querySelector([data-submit]);
+let btn = document.getElementById('Convert')
 
-btn.addEventListener('click', 'convert')
+function conversion(){
+    let minutes = document.getElementById('inputMins').value;
+    let seconds = minutes * 60
+    if (minutes < 0){
+        document.getElementById(`result`).textContent = `You must enter a valid number`
+    } 
+    else{
+        document.getElementById(`result`).textContent = seconds + ` seconds`
+    }
+}
+
+btn.addEventListener('click', conversion)
